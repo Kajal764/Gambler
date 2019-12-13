@@ -13,11 +13,11 @@ playingTime=1
 function checkForNextGambler(){
    if [[ $value -gt 0 ]]
    then
-		playingTime=$(($playingTime+1))
-      echo "play $playingTime time"
-      getTotalAmount
+   	playingTime=$(($playingTime+1))
+      	echo "play $playingTime time"
+      	getTotalAmount
    else
-      echo "Better Luck For Next Time!!!"
+	echo "Better Luck For Next Time!!!"
    fi
 }
 
@@ -31,11 +31,8 @@ function getLuckyUnluckyDay(){
 
 
 function getTotalAmount(){
-
 	value=0
-
 	declare -A totalCash
-
 	for (( i=1;i<=20;i++ ))
 	do
 		cash=$STAKE
