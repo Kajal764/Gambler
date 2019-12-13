@@ -9,6 +9,7 @@ LIMIT=$(( 50 * $STAKE / 100 ))
 LOW_LIMIT=$(( STAKE - LIMIT))
 HIGH_LIMIT=$((STAKE + LIMIT))
 
+declare -A totalCash
 
 for (( i=1;i<=20;i++ ))
 do
@@ -26,5 +27,11 @@ do
 			cash=$(($cash-$BET))
 		fi
 	done
-	echo $cash	$win	$loss
+	totalCash[$i]=$(($STAKE-$cash))
+done
+
+
+for(( i=1;i<=20;i++ ))
+do
+	echo "day$i ${totalCash[$i]}"
 done
